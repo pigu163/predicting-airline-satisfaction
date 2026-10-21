@@ -1,0 +1,37 @@
+# Competition datasets and generated source tables
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.xlsx
+*.xls
+*.zip
+*.gz
+data/
+image/source_data/
+
+# Local agent instructions and configuration
+AGENTS.md
+.agents/
+.codex/
+.aws/
+.env
+.env.*
+
+# Python, Jupyter and editor caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+
+# Figures are exported as PDF only
+*.png
+*.jpg
+*.jpeg
