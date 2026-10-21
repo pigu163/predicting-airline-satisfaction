@@ -8,6 +8,8 @@
 
 ```text
 read_airline_data.ipynb    数据读取、分节图表与中文分析
+scipy_feature_correlation.ipynb  全特征关联、分层/组合、冗余及建模建议
+code/scipy_feature_correlation/ SciPy 统计计算、PDF 绘图与公式检查
 code/plot/airline_eda.py   数据检查、统计汇总与绘图
 code/plot/check_eda.py     汇总边界与数据完整性检查
 code/plot/README.md        统计方法、图表说明与 QA 记录
@@ -54,6 +56,20 @@ python code/plot/check_eda.py
 ```
 
 本机指定解释器为 `/Users/zhaobo/anaconda3/envs/torch/bin/python`；其他机器使用自己的 Python 环境即可。
+
+## SciPy 特征关联分析
+
+从根目录依次执行 `scipy_feature_correlation.ipynb`，即可计算全部 21 个业务特征与标签的关联，并单独检查 ID。Notebook 分 block 解释公式、适用范围与结果，计算逻辑保存在 `code/scipy_feature_correlation/`，不需要复制计算代码到 notebook。
+
+分析包括 Cramér’s V、卡方及 BY 多重检验调整、经验互信息与标签熵降低比例、点二列/Spearman/Kendall 相关、原始值 AUC/Somers’ D，以及连续变量分箱敏感性。还提供按舱位/出行目的分层的条件互信息、四组特征组合和特征间的层次聚类。
+
+图表仅导出至 `image/scipy_feature_correlation/*.pdf`；全量统计表与运行版本保存到被忽略的 `image/scipy_feature_correlation/source_data/`。执行公式与边界检查：
+
+```bash
+python code/scipy_feature_correlation/check_analysis.py
+```
+
+这些全训练集统计量帮助提出编码、非线性和交互假设；不能替代控制全部其他变量后的独立贡献或交叉验证 AUC，也不能用作验证集的目标编码。
 
 ## 分析说明
 

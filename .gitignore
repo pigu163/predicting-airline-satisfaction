@@ -9,6 +9,7 @@
 *.gz
 data/
 image/source_data/
+image/**/source_data/
 
 # Local agent instructions and configuration
 AGENTS.md
